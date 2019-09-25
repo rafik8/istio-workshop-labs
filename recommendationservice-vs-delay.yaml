@@ -1,0 +1,15 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: recommendationservice-delay
+spec:
+  hosts:
+  - recommendationservice
+  http:
+    - route:
+        - destination:
+            host: recommendationservice
+      fault:
+        delay:
+          percent: 100
+          fixedDelay: 5s

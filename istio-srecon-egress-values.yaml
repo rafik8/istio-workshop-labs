@@ -1,0 +1,33 @@
+#
+# addon grafana configuration
+#
+grafana:
+  enabled: true
+
+
+#
+# addon jaeger tracing configuration
+#
+tracing:
+  enabled: true
+
+#
+# addon kiali tracing configuration
+#
+kiali:
+  enabled: true
+
+#
+# Istio CNI plugin enabled
+#   This must be enabled to use the CNI plugin in Istio.  The CNI plugin is installed separately.
+#   If true, the privileged initContainer istio-init is not needed to perform the traffic redirect
+#   settings for the istio-proxy.
+#
+istio_cni:
+  enabled: true
+
+
+global:
+  # Set the default behavior of the sidecar for handling outbound traffic from the application.
+  outboundTrafficPolicy:
+    mode: REGISTRY_ONLY

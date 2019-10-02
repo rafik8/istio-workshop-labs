@@ -31,3 +31,11 @@ spec:
         host: frontend
         port:
           number: 80
+        subset: green
+      weight: 100
+    - destination:
+        host: frontend
+        port:
+          number: 80
+        subset: blue
+      weight: 0

@@ -1,0 +1,23 @@
+apiVersion: "rbac.istio.io/v1alpha1"
+kind: ServiceRole
+metadata:
+  name: viewer
+  namespace: hipster-app
+spec:
+  rules:
+  - services: ["*.hipster-app.svc.cluster.local"]
+  # - services: ["frontend.hipster-app.svc.cluster.local", "adservice.default.svc.cluster.local", "cartservice.default.svc.cluster.local","checkoutservice.default.svc.cluster.local","currencyservice.default.svc.cluster.local","productcatalogservice.default.svc.cluster.local"]
+    methods: ["GET","POST","HEAD"]
+---
+apiVersion: rbac.istio.io/v1alpha1
+kind: ServiceRoleBinding
+metadata:
+  name: bind-viewer
+  namespace: hipster-app
+spec:
+  subjects:
+  subjects:
+   - user: "*"
+  roleRef:
+    kind: ServiceRole
+    name: viewer

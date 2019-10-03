@@ -5,12 +5,12 @@ metadata:
 spec:
   host: frontend
   subsets:
-    - name: green
+    - name: v1
       labels:
-        version: "v0.1.2"
-    - name: blue
+        version: v0.1.2
+    - name: v2
       labels:
-        version: "v0.1.3"
+        version: v0.1.3
   # trafficPolicy:
-  #   loadBalancer:
-  #     simple: RANDOM
+  # loadBalancer:
+  #   simple: RANDOM

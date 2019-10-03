@@ -4,7 +4,9 @@ metadata:
   name: redis-serviceentry
 spec:
   hosts:
-  - REDIS_ENDPOINT
+  - redis.domain # not used
+  addresses:
+  - REDIS_ENDPOINT # VIPs
   ports:
   - number: 6379
     name: tcp-redis

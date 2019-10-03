@@ -11,7 +11,9 @@ spec:
       name: tcp-redis
       protocol: TCP
     hosts:
-    - REDIS_ENDPOINT
+    - redis.domain # not used
+    addresses:
+    - REDIS_ENDPOINT # VIPs
 ---
 apiVersion: networking.istio.io/v1alpha3
 kind: DestinationRule

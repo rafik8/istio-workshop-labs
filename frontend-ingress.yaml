@@ -11,7 +11,7 @@ spec:
       name: http
       protocol: HTTP
     hosts:
-    - "hipster.trainee001-srecon19.innovlabs.io"
+    - "hipster.trainee701-srecon19.innovlabs.io"
 ---
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
@@ -19,7 +19,7 @@ metadata:
   name: frontend-virtualservice
 spec:
   hosts:
-  - "hipster.trainee001-srecon19.innovlabs.io"
+  - "hipster.trainee701-srecon19.innovlabs.io"
   gateways:
   - app-gateway
   http:

@@ -11,7 +11,7 @@ spec:
       name: http
       protocol: HTTP
     hosts:
-    - "dashboard.trainee001-srecon19.innovlabs.io"
+    - "dashboard.trainee701-srecon19.innovlabs.io"
 ---
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
@@ -19,7 +19,7 @@ metadata:
   name: kiali
 spec:
   hosts:
-  - "dashboard.trainee001-srecon19.innovlabs.io"
+  - "dashboard.trainee701-srecon19.innovlabs.io"
   gateways:
   - addons-gateway
   http:
@@ -38,7 +38,7 @@ metadata:
   name: tracing
 spec:
   hosts:
-  - "dashboard.trainee001-srecon19.innovlabs.io"
+  - "dashboard.trainee701-srecon19.innovlabs.io"
   gateways:
   - addons-gateway
   http:
@@ -57,7 +57,7 @@ spec:
 #   name: prometheus
 # spec:
 #   hosts:
-#   - "dashboard.trainee001-srecon19.innovlabs.io"
+#   - "dashboard.trainee701-srecon19.innovlabs.io"
 #   gateways:
 #   - addons-gateway
 #   http:
@@ -76,7 +76,7 @@ spec:
 #   name: grafana
 # spec:
 #   hosts:
-#   - "dashboard.trainee001-srecon19.innovlabs.io"
+#   - "dashboard.trainee701-srecon19.innovlabs.io"
 #   gateways:
 #   - addons-gateway
 #   http:

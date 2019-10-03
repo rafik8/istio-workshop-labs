@@ -1,3 +1,14 @@
+global:
+  proxy:
+    # Resources for the sidecar.
+    resources:
+      requests:
+        cpu: 100m
+        memory: 128Mi
+      limits:
+        cpu: 600m
+        memory: 900Mi
+
 #
 # addon grafana configuration
 #
@@ -25,3 +36,53 @@ kiali:
 #
 istio_cni:
   enabled: true
+
+
+pilot:
+  autoscaleEnabled: false
+  traceSampling: 100.0
+  requests:
+    cpu: 500m
+    memory: 900Mi
+
+mixer:
+  policy:
+    enabled: true
+    autoscaleEnabled: false
+    # resources:
+    #   requests:
+    #     cpu: 10m
+    #     memory: 100Mi
+
+  telemetry:
+    enabled: true
+    autoscaleEnabled: false
+    # resources:
+    #   requests:
+    #     cpu: 50m
+    #     memory: 100Mi
+
+  # adapters:
+  #   stdio:
+  #     enabled: true
+
+gateways:
+  istio-ingressgateway:
+    autoscaleEnabled: false
+    # resources:
+    #   requests:
+    #     cpu: 10m
+    #     memory: 40Mi
+
+  istio-egressgateway:
+    enabled: true
+    autoscaleEnabled: false
+    # resources:
+    #   requests:
+    #     cpu: 10m
+    #     memory: 40Mi
+
+mtls:
+  # Default setting for service-to-service mtls. Can be set explicitly using
+  # destination rules or service annotations.
+  enabled: false
